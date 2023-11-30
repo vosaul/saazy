@@ -1,0 +1,72 @@
+@use "@/styles/variables";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+
+  @include variables.mq("sm") {
+    grid-template-columns: 1fr;
+  }
+}
+
+.link {
+  border: 1px solid var(--cmm-color-border-base);
+  border-radius: var(--cmm-radius-lg);
+  padding: 1rem;
+  display: grid;
+  row-gap: 0.25rem;
+  background: var(--cmm-color-surface-0);
+
+  [data-theme="dark"] & {
+    background: var(--cmm-color-surface-1);
+
+    &:hover {
+      background: var(--cmm-color-surface-2);
+    }
+  }
+
+  &:hover {
+    background: var(--cmm-color-surface-1);
+  }
+
+  &__upper {
+    font-size: var(--cmm-font-size-sm);
+
+    &.next {
+      text-align: end;
+    }
+  }
+
+  &__lower {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: var(--cmm-font-weight-medium);
+    color: var(--cmm-color-link);
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &.next {
+      justify-content: flex-end;
+    }
+
+    &.prev {
+      justify-content: flex-start;
+    }
+  }
+
+  @include variables.mq("sm") {
+    &.next {
+      grid-row: 1;
+    }
+
+    &.prev {
+      grid-row: 2;
+    }
+  }
+}

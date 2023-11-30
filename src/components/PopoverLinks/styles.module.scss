@@ -1,0 +1,51 @@
+.button {
+  display: flex;
+  align-items: center;
+  font-weight: var(--cmm-font-weight-bold);
+  font-size: var(--cmm-font-size-sm);
+  gap: 0.25rem;
+  line-height: 2rem;
+  border-radius: var(--cmm-radius-md);
+  padding: 0 0.5rem;
+
+  > svg {
+    width: 0.75rem;
+    height: 0.75rem;
+    stroke-width: 3.2;
+    color: var(--cmm-color-font-base);
+    margin-top: 0.1rem;
+  }
+
+  &:hover {
+    background: var(--cmm-color-surface-2);
+  }
+}
+
+.linkList {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0.25rem;
+  font-size: var(--cmm-font-size-sm);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  font-weight: var(--cmm-font-weight-medium);
+  gap: 0.5rem;
+  white-space: nowrap;
+  padding: 0.4rem 0.5rem;
+  transition: var(--cmm-transition-bg);
+  border-radius: var(--cmm-radius-md);
+
+  &:hover {
+    background: var(--cmm-color-surface-2);
+  }
+
+  > svg {
+    width: 1.2em;
+    height: 1.2em;
+    stroke-width: 2;
+    color: var(--cmm-color-primary-emphasis);
+  }
+}

@@ -1,0 +1,26 @@
+@use "@/styles/variables";
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.arrow {
+  width: 0.8rem;
+  height: 0.8rem;
+  stroke-width: 2.5;
+
+  @include variables.mq("sm") {
+    display: none;
+  }
+}
+
+.status {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  font-weight: var(--cmm-font-weight-medium);
+  font-size: var(--cmm-font-size-sm);
+}

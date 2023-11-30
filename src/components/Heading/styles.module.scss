@@ -1,0 +1,55 @@
+@use "@/styles/variables";
+
+.heading {
+  display: grid;
+  gap: 0.75rem;
+
+  &__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--cmm-color-border-base);
+    border-radius: var(--cmm-radius-2xl);
+    position: relative;
+    box-shadow: var(--cmm-shadow-sm);
+    background: var(--cmm-color-surface-0);
+
+    [data-theme="dark"] & {
+      background: var(--cmm-color-surface-1);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: calc(100% - 0.45rem);
+      height: calc(100% - 0.45rem);
+      border: 1px solid var(--cmm-color-primary-border);
+      border-radius: var(--cmm-radius-xl);
+      background: linear-gradient(
+        120deg,
+        transparent,
+        hsl(220deg 100% 60% / 0.05),
+        hsl(220deg 100% 60% / 0.25)
+      );
+    }
+
+    > svg {
+      width: 1.8rem;
+      height: 1.8rem;
+      color: var(--cmm-color-primary-emphasis);
+    }
+  }
+
+  &__title {
+    font-weight: var(--cmm-font-weight-extrabold);
+    font-size: clamp(2rem, 1.537rem + 1.951vw, var(--cmm-font-size-4xl));
+    line-height: 1;
+  }
+
+  &__tagline {
+    color: var(--cmm-color-primary-emphasis);
+    font-size: var(--cmm-font-size-lg);
+    font-weight: var(--cmm-font-weight-bold);
+  }
+}

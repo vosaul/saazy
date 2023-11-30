@@ -1,0 +1,35 @@
+@use "@/styles/variables";
+
+.container {
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+  gap: 1rem;
+
+  a {
+    text-decoration: underline;
+  }
+
+  .column2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    > * {
+      width: calc(50% - 0.5rem);
+    }
+
+    @include variables.mq(variables.$md) {
+      flex-direction: column;
+    }
+  }
+}
+
+.terms {
+  font-size: var(--cmm-font-size-xs);
+  color: var(--cmm-color-font-base);
+
+  a {
+    text-decoration: underline;
+  }
+}

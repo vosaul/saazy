@@ -1,0 +1,36 @@
+$panelZ: 10;
+
+.wrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.panel {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  margin-top: 0.75rem;
+  z-index: $panelZ;
+  animation: show 0.1s forwards;
+
+  &__content {
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+    border-radius: var(--cmm-radius-lg);
+    background: var(--cmm-color-surface-0);
+    border: 1px solid var(--cmm-color-border-base);
+    min-width: 7rem;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translateY(0.3rem);
+  }
+  to {
+    translate: 1;
+    transform: translateY(0);
+  }
+}

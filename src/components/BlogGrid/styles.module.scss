@@ -1,0 +1,23 @@
+@use "@/styles/variables";
+
+.container {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 2rem;
+}
+
+.featured {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  container-type: inline-size;
+
+  @include variables.mq(md) {
+    grid-column: unset;
+    grid-row: unset;
+    container-type: unset;
+  }
+}

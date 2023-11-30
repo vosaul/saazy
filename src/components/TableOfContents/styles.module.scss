@@ -1,0 +1,64 @@
+@use "@/styles/variables";
+
+.container {
+  --title-height: 1.5rem;
+  --title-row-gap: 0.5rem;
+
+  display: grid;
+  row-gap: var(--title-row-gap);
+  max-height: calc(100dvh - variables.$headerHeight - 2rem);
+  overflow-y: auto;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-size: var(--cmm-font-size-xs);
+  text-transform: uppercase;
+  color: var(--cmm-color-font-muted);
+  height: var(--title-height);
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--cmm-color-primary-emphasis);
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  color: var(--cmm-color-font-muted);
+}
+
+.item {
+  display: flex;
+  padding: 0.25rem;
+  padding-left: 1rem;
+  font-size: var(--cmm-font-size-sm);
+  border-left: 2px solid;
+  border-left-color: var(--cmm-color-border-base);
+
+  &:hover {
+    background: var(--cmm-color-surface-1);
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.indent {
+  padding-left: 2rem;
+}
+
+.active {
+  background-color: var(--cmm-color-primary-subtle) !important;
+  color: var(--cmm-color-primary-emphasis);
+  position: relative;
+  border-left-color: var(--cmm-color-primary-emphasis);
+}

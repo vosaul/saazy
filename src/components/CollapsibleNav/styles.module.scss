@@ -1,0 +1,112 @@
+@use "@/styles/variables";
+
+$borderLeftColor: var(--cmm-color-border-base);
+$borderLeftWidth: 2px;
+$marginBottom: 0.5rem;
+
+.rootList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+details.collapsible {
+  &[open] {
+    > summary .chevronIcon {
+      rotate: 90deg;
+    }
+  }
+
+  summary {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    place-content: center;
+    gap: 0.75rem;
+    user-select: none;
+    border-radius: var(--cmm-radius-sm);
+    background-color: var(--cmm-color-surface-0);
+    position: relative;
+    padding: 0 0.5rem;
+    transition: var(--cmm-transition-bg);
+    font-size: var(--cmm-font-size-sm);
+    font-weight: var(--cmm-font-weight-medium);
+    cursor: pointer;
+    width: 100%;
+    height: 2rem;
+
+    .chevronIcon {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--cmm-color-font-muted);
+      translate: 0.25rem;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    &:hover:not([aria-current="page"]) {
+      background-color: var(--cmm-color-surface-2);
+    }
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  > .children {
+    margin-top: 0.25rem;
+  }
+}
+
+.children {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+%item {
+  display: flex;
+  align-items: center;
+  border-radius: var(--cmm-radius-sm);
+  padding: 0 0.75rem 0 1.25rem;
+  width: 100%;
+  height: 2rem;
+  border-radius: var(--cmm-radius-sm);
+}
+
+.section {
+  &:not(:first-child) {
+    margin-top: 1rem;
+  }
+
+  .sectionLabel {
+    @extend %item;
+
+    color: var(--cmm-color-font-muted);
+    background-color: var(--cmm-color-surface-1);
+    font-size: var(--cmm-font-size-xs);
+    font-weight: var(--cmm-font-weight-semibold);
+    margin-bottom: $marginBottom;
+    position: relative;
+  }
+}
+
+.link {
+  @extend %item;
+
+  color: var(--cmm-color-font-muted);
+  font-size: var(--cmm-font-size-sm);
+  font-weight: var(--cmm-font-weight-medium);
+  background-color: var(--cmm-color-surface-0);
+  outline-offset: 0;
+
+  &:hover {
+    background-color: var(--cmm-color-surface-2);
+  }
+
+  &--active,
+  &[aria-current="page"] {
+    font-weight: var(--cmm-font-weight-bold);
+    border-color: var(--cmm-color-primary-emphasis);
+    color: var(--cmm-color-primary-emphasis);
+    background-color: var(--cmm-color-primary-subtle);
+  }
+}
