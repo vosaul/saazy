@@ -1,0 +1,41 @@
+---
+title: "Site config"
+id: "site-config"
+---
+
+## `siteData` object
+
+You can customize your site's metadata in `/content/siteData.ts`.
+
+```ts title="/content/siteData.ts"
+const url = "https://saazy.camome.net";
+const siteData = {
+  title: "Saazy",
+  subTitle: "Grow your business with your customers",
+  description: "This is description text about your website.",
+  url,
+  ogImage: url + "/images/og.png",
+  defaultAuthor: "john-doe",
+  defaultBlogPostImg: "/images/post-placeholder.webp",
+  blogPostsPerPage: 9,
+};
+```
+
+## OG image
+
+Just replace `/public/images/og.png` or modify `/src/components/DefaultSeo.tsx` for more precise control.
+
+## Favicon
+
+Generate favicons from single file by [Faviconize](https://github.com/sabigara/faviconize), a Deno CLI tool I developed.
+
+```bash
+deno run --unstable --allow-read --allow-write --allow-ffi \
+ "https://deno.land/x/faviconize/cmd.ts" \
+ -i "path/to/icon.<svg or png>" \
+ -o "path/to/outdir/"
+```
+
+:::warn
+You need Deno runtime installed in you machine.
+:::

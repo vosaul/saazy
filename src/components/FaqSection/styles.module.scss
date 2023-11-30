@@ -1,0 +1,52 @@
+@use "@/styles/variables";
+
+.container {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  background: linear-gradient(180deg, hsl(220deg 100% 80% / 0.2), transparent);
+
+  [data-theme="dark"] & {
+    background: linear-gradient(
+      180deg,
+      hsl(220deg 100% 60% / 0.1),
+      transparent
+    );
+  }
+}
+
+.inner {
+  @include variables.container;
+
+  display: grid;
+  gap: 3rem;
+}
+
+.sub {
+  margin-top: 1.5rem;
+  color: var(--cmm-color-font-muted);
+
+  a {
+    color: var(--cmm-color-link);
+    font-weight: var(--cmm-font-weight-semibold);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 3rem;
+
+  dt {
+    font-weight: var(--cmm-font-weight-bold);
+    font-size: var(--cmm-font-size-lg);
+  }
+
+  dd {
+    margin-top: 1rem;
+    color: var(--cmm-color-font-muted);
+  }
+}

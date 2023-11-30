@@ -1,0 +1,33 @@
+@use "@/styles/variables";
+
+.container {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  background: var(--cmm-color-surface-1);
+  min-height: 100dvh;
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+
+  @include variables.mq(md) {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.inner {
+  @include variables.container(28rem);
+
+  display: grid;
+  place-items: center;
+  row-gap: 1rem;
+}
+
+.title {
+  font-weight: var(--cmm-font-weight-extrabold);
+  font-size: var(--cmm-font-size-3xl);
+}
+
+.logo {
+  height: 3.25rem;
+  width: auto;
+}

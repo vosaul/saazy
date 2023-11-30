@@ -1,0 +1,41 @@
+@use "@/styles/variables";
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100vh;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--cmm-color-surface-0);
+}
+
+.headerInner {
+  max-width: 100% !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 18rem 1fr;
+  column-gap: 3rem;
+
+  @include variables.mq("md") {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sidebarDesktop {
+  @include variables.mq("md") {
+    display: none;
+  }
+}
+
+.sidebarMobile {
+  height: unset !important;
+}

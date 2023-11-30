@@ -1,0 +1,21 @@
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+/dist/
+
+tsconfig.tsbuildinfo
+
+.env
+.contentlayer/
+node_modules/
+.scss-types

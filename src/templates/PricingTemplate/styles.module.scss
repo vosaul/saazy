@@ -1,0 +1,23 @@
+@use "@/styles/variables";
+
+.container {
+  padding-top: 3rem;
+}
+
+.table {
+  @include variables.container(variables.$xl);
+}
+
+.large {
+  @include variables.mq("md") {
+    display: none;
+  }
+}
+
+.small {
+  display: none;
+
+  @include variables.mq("md") {
+    display: table;
+  }
+}

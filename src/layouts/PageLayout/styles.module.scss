@@ -1,0 +1,51 @@
+@use "@/styles/variables";
+
+.background {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100vh;
+
+  @include variables.mq("md") {
+    background-size: 60rem;
+    background-position: center top;
+  }
+}
+
+.titleSection {
+  .title {
+    font-weight: var(--cmm-font-weight-extrabold);
+    font-size: var(--cmm-font-size-5xl);
+    line-height: 1;
+    display: flex;
+    align-items: stretch;
+    border-color: var(--cmm-color-primary-emphasis);
+    border-style: solid;
+    border-left-width: 6px;
+
+    padding-left: 0.25em;
+
+    @include variables.mq(md) {
+      font-size: var(--cmm-font-size-4xl);
+      border-left-width: 5px;
+    }
+  }
+
+  .titleSectionInner {
+    @include variables.container(variables.$xl);
+
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--cmm-color-border-subtle);
+  }
+
+  .description {
+    margin-top: 1rem;
+    font-size: var(--cmm-font-size-lg);
+    color: var(--cmm-color-font-muted);
+
+    @include variables.mq("md") {
+      font-size: var(--cmm-font-size-md);
+    }
+  }
+}
