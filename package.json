@@ -55,7 +55,7 @@
     "remark-gfm": "^3.0.1",
     "remark-mdx": "^2.1.5",
     "remark-parse": "^10.0.1",
-    "sharp": "^0.31.3",
+    "sharp": "^0.32.6",
     "shiki": "^0.14.0",
     "unified": "^10.1.2",
     "unist-util-visit": "^4.1.1"
